@@ -4,8 +4,7 @@
 // - Each card has one of the following colors Red, Green, Blue, Yellow
 // - Include a rank for each card (1 - 10, followed by $, %, and &)
 
-//Type CardColor and CardRank set up by enum
-
+//Type CardColor and CardRank set by enum
 CardColor[] card_color = new CardColor[] {CardColor.Red, CardColor.Green, CardColor.Blue, CardColor.Yellow};
 CardRank[] card_rank = new CardRank[] { CardRank.One, CardRank.Two, CardRank.Three, CardRank.Four, CardRank.Five, CardRank.Six, 
     CardRank.Seven, CardRank.Seven, CardRank.Eight, CardRank.Nine, CardRank.Ten, 
@@ -23,7 +22,6 @@ foreach (CardColor color in card_color)
 Console.WriteLine("Press any key to end the program");
 Console.ReadKey();
 
-
 public class Card
 {
     public CardColor Color { get; } //Type CardColor based on enum
@@ -35,16 +33,14 @@ public class Card
         Rank = rank;
     }
 
-    // Method to determine if card is a symbol or a number
+// Method to determine if card is a symbol or a number
     internal static string CardIDCheck(CardRank rank)
     {
         string CardCheckTracker;
         if (rank == CardRank.Ampersand || rank == CardRank.Caret || rank == CardRank.Percent || rank == CardRank.Dollar) return CardCheckTracker = "Symbol Card";
         else return CardCheckTracker = "Number Card";
     }
-
 }
-
 //enum for Rank and Color
     public enum CardColor { Red, Green, Blue, Yellow }
     public enum CardRank { One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Dollar, Percent, Caret, Ampersand }
